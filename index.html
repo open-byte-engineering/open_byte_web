@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Byte Engineering - Company Profile & Tech Stack</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+    :root {
+      --primary: #0066CC;
+      --primary-dark: #004080;
+      --accent: #00D2FF;
+      --bg-dark: #0B0F19;
+      --text-main: #1F2937;
+      --text-muted: #4B5563;
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text-main);
+      background-color: #1A202C;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Page Setup for A4 Landscape */
+    .page {
+      width: 297mm;
+      height: 210mm;
+      margin: 20px auto;
+      background: var(--card-bg);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22mm 20mm 15mm 20mm;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      page-break-after: always;
+      break-after: page;
+    }
+
+    /* Header & Footer */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    /* Logo Classes */
+    .brand-logo-img {
+      height: 75px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+      filter: brightness(1);
+    }
+
+    .brand-logo-img-cover {
+      height: 75px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+      filter: brightness(0) invert(1); /* Rende il logo completamente bianco per sfondi scuri */
+    }
+
+    .brand-logo-img-white {
+      height: 75px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+      filter: brightness(0) invert(1); /* Rende il logo bianco per la retro copertina scura */
+    }
+
+    .header-tag {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      background: rgba(0, 102, 204, 0.08);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-color);
+      padding-top: 12px;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+
+    .page-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Typography */
+    h1 { font-size: 36px; font-weight: 800; line-height: 1.15; color: var(--bg-dark); }
+    h2 { font-size: 24px; font-weight: 700; color: var(--bg-dark); margin-bottom: 15px; }
+    h3 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+    p { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+    
+    .lead {
+      font-size: 15px;
+      color: var(--text-main);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* Cover Page Styling */
+    .page.cover {
+      background: linear-gradient(135deg, #0B0F19 0%, #111827 60%, #004080 100%);
+      color: #FFFFFF;
+      padding: 30mm 25mm;
+      justify-content: space-between;
+    }
+
+    .cover h1 {
+      color: #FFFFFF;
+      font-size: 44px;
+      margin-bottom: 15px;
+    }
+
+    .cover-subtitle {
+      font-size: 20px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .cover-desc {
+      font-size: 15px;
+      color: #9CA3AF;
+      max-width: 650px;
+      line-height: 1.6;
+    }
+
+    .cover-footer {
+      display: flex;
+      gap: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 20px;
+      font-size: 13px;
+      color: #D1D5DB;
+    }
+
+    /* Grid Layouts */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 15px; }
+
+    /* Cards */
+    .card {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .card-accent {
+      border-left: 4px solid var(--primary);
+    }
+
+    .card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--bg-dark);
+      margin-bottom: 6px;
+    }
+
+    ul.tech-list {
+      list-style: none;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    ul.tech-list li {
+      margin-bottom: 5px;
+      position: relative;
+      padding-left: 14px;
+    }
+
+    ul.tech-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    /* Process Flow */
+    .process-flow {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .process-step {
+      flex: 1;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-top: 4px solid var(--primary);
+      border-radius: 6px;
+      padding: 15px;
+      position: relative;
+    }
+
+    .step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    /* Matrix Table */
+    table.matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    table.matrix-table th {
+      background: var(--bg-dark);
+      color: #FFFFFF;
+      text-align: left;
+      padding: 10px 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    table.matrix-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+      vertical-align: top;
+    }
+
+    table.matrix-table tr:nth-child(even) td {
+      background: var(--bg-light);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      background: rgba(0, 102, 204, 0.1);
+      color: var(--primary);
+    }
+
+    /* Print Controls */
+    @media print {
+      body { background: none; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        width: 297mm;
+        height: 210mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: COPERTINA -->
+  <div class="page cover">
+    <div>
+      <img src="logo.png" alt="Open Byte Engineering" class="brand-logo-img-cover">
+    </div>
+    <div>
+      <h1>Ingegneria del Software Industriale.<br><span style="color: var(--accent);">Dalla Simulazione al Cloud.</span></h1>
+      <div class="cover-subtitle">Open Byte Engineering: Company Profile</div>
+      <div class="cover-desc">
+        Partner strategico per Costruttori di Macchine (OEM) e System Integrator. Sviluppo PLC/Motion Control, Convergenza IT/OT, Standardizzazione e Cybersecurity Industriale (CRA).
+      </div>
+    </div>
+    <div class="cover-footer">
+      <div>🌐 www.open-byte.it</div>
+      <div>✉️ info@open-byte.it</div>
+      <div>🛡️ Specializzazione Ecosistema Siemens</div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: CHI SIAMO & VISION -->
+  <div class="page">
+    <div class="page-header">
+      <img src="logo.png" alt="Open Byte Engineering" class="brand-logo-img">
+      <div class="header-tag">Chi Siamo & Vision</div>
+    </div>
+    <div class="page-body">
+      <h2>Innalziamo la Qualità del Software Industriale</h2>
+      <p class="lead" style="margin-bottom: 20px;">
+        Mettiamo oltre 15 anni di esperienza vissuti sul campo al servizio dei costruttori di macchine e integratori di sistemi, trasformando il codice di macchina da costo/rischio a risorsa strategica, scalabile e conforme agli standard del futuro.
+      </p>
+      
+      <div class="grid-2" style="margin-bottom: 20px;">
+        <div class="card card-accent">
+          <h4>La Nostra Identità</h4>
+          <p>Fondata da tre ingegneri con un background consolidato tra multinazionali della tecnologia (Siemens, Gefran) e primari gruppi OEM internazionali, Open Byte Engineering nasce per risolvere i problemi storici dell'automazione industriale:</p>
+          <ul class="tech-list">
+            <li>Codice disorganizzato, frammentato e privo di documentazione.</li>
+            <li>Ritardi imprevisti e forte stress nei collaudi di cantiere.</li>
+            <li>Dipendenza esclusiva dai singoli "eroi del codice" aziendali.</li>
+            <li>Complessità nell'adeguamento al Cyber Resilience Act (CRA).</li>
+          </ul>
+        </div>
+        <div class="card card-accent">
+          <h4>I Nostri Valori Fondanti</h4>
+          <ul class="tech-list" style="margin-top: 5px;">
+            <li><strong>Software Engineering Rigoroso:</strong> Applicazione dei paradigmi informatici moderni (modularità, versionamento Git, Security by Design) al mondo OT.</li>
+            <li><strong>Salute dell'Ufficio Tecnico:</strong> Creazione di standard e librerie che riducono lo stress da cantiere e azzerano il caos operativo.</li>
+            <li><strong>Zero Vendor Lock-In:</strong> Consegna di codice pulito, documentato e simulabile con totale indipendenza per il cliente.</li>
+            <li><strong>Evoluzione Continua:</strong> Aggiornamento permanente e nativo sulle tecnologie di punta (Siemens in primis).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <div>Open Byte Engineering - Company Profile</div>
+      <div>Pagina 2 di 8</div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: I 3 LIVELLI DI INGAGGIO -->
+  <div class="page">
+    <div class="page-header">
+      <img src="logo.png" alt="Open Byte Engineering" class="brand-logo-img">
+      <div class="header-tag">L'Offerta di Valore</div>
+    </div>
+    <div class="page-body">
+      <h2>I 3 Livelli di Ingaggio Commerciale</h2>
+      <p class="lead" style="margin-bottom: 20px;">Offriamo soluzioni flessibili studiate per affiancare gli uffici tecnici nelle loro sfide operative e strategiche.</p>
+
+      <div class="grid-3">
+        <div class="card" style="border-top: 4px solid var(--primary);">
+          <span class="badge" style="margin-bottom: 10px;">LIVELLO 01</span>
+          <h4>Sviluppo Software Diretto & Peak Capacity</h4>
+          <p>Presa in carico integrale di pacchetti di lavoro PLC, HMI, SCADA e Motion Control per la gestione dei picchi di lavoro.</p>
+          <ul class="tech-list">
+            <li>Piattaforme Siemens (TIA Portal V18-V20+), CODESYS, Rockwell, Beckhoff.</li>
+            <li>Standard IEC 61131-3, ISA-88, OMAC/PackML.</li>
+            <li>Codice collaudato al 100% via simulazione preventiva in-house.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--primary);">
+          <span class="badge" style="margin-bottom: 10px;">LIVELLO 02</span>
+          <h4>Consulenza, Standardizzazione & Mentoring</h4>
+          <p>Audit del codice e dei flussi di lavoro dell'ufficio tecnico esistente per elevare la produttività interna.</p>
+          <ul class="tech-list">
+            <li>Sviluppo di librerie modulari aziendali riutilizzabili.</li>
+            <li>Introduzione di DevTools (GitLab, VS Code) e versionamento.</li>
+            <li>Affiancamento del team per azzerare la dipendenza da singoli.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--primary);">
+          <span class="badge" style="margin-bottom: 10px;">LIVELLO 03</span>
+          <h4>Turnkey R&D & Compliance Normativa</h4>
+          <p>Gestione chiavi in mano di progetti d'innovazione IT/OT e adeguamento alle direttive europee.</p>
+          <ul class="tech-list">
+            <li>Adeguamento Cyber Resilience Act (CRA) e Reg. Macchine UE 2023/1230.</li>
+            <li>Sicurezza reti OT/IT e principi IEC 62443.</li>
+            <li>Integrazione Edge AI, Docker, Python, C# e Web HMI (React).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <div>Open Byte Engineering - Company Profile</div>
+      <div>Pagina 3 di 8</div>
+    </div>
+  </div>
+
+  <!-- PAGE 4: TECH STACK & DOMAIN EXPERTISE -->
+  <div class="page">
+    <div class="page-header">
+      <img src="logo.png" alt="Open Byte Engineering" class="brand-logo-img">
+      <div class="header-tag">Tech Stack & Domain Expertise</div>
+    </div>
+    <div class="page-body">
+      <h2>La Nostra Matrice Tecnologica</h2>
+      
+      <div class="grid-4" style="margin-top: 10px;">
+        <div class="card">
+          <h4>⚙️ PLC & Motion</h4>
+          <ul class="tech-list">
+            <li><strong>Siemens Ecosystem:</strong> S7-1500/1200 (TIA Portal V18-V20+), STEP 7, Safety Integrated.</li>
+            <li><strong>SCADA/HMI:</strong> WinCC Unified, WinCC Prof, SIMATIC AX.</li>
+            <li><strong>Motion:</strong> Sinamics S120/G120, Simotion, S7-1500T (Assi interpolati, Camme).</li>
+            <li><strong>Multi-Vendor:</strong> CODESYS, Rockwell Studio 5000, Beckhoff TwinCAT, Gefran.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>🌐 Convergenza IT/OT</h4>
+          <ul class="tech-list">
+            <li><strong>Linguaggi:</strong> C#, Python, TypeScript, JavaScript, HTML5, SQL, C++.</li>
+            <li><strong>Edge & Container:</strong> Docker, Linux OS a bordo macchina, microservizi Edge AI.</li>
+            <li><strong>IIoT & Protocols:</strong> OPC-UA (Native & Secure), Modbus TCP, REST API.</li>
+            <li><strong>Web HMI:</strong> Interfacce operatore di nuova generazione in React / Node.js.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>🛡️ Cybersecurity & Norme</h4>
+          <ul class="tech-list">
+            <li><strong>Normative UE:</strong> Cyber Resilience Act (CRA), Regolamento Macchine 2023/1230.</li>
+            <li><strong>Security OT:</strong> IEC 62443 (Security by Design), Hardening di rete.</li>
+            <li><strong>Standard:</strong> ISA-88, OMAC / PackML, IEC 61131-3.</li>
+            <li><strong>Bus di Campo:</strong> Profinet (Engineer Certificato), Profibus, EtherNet/IP, IO-Link.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>📐 CAD & Dev Tools</h4>
+          <ul class="tech-list">
+            <li><strong>CAD Elettrico:</strong> EPLAN Electric P8, SPAC, AutoCAD 2D/3D, EXEL Integra.</li>
+            <li><strong>DevOps:</strong> Git / GitLab, VS Code per automazione.</li>
+            <li><strong>Virtual Testing:</strong> Simulazione preventiva della logica prima del cantiere.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <div>Open Byte Engineering - Company Profile</div>
+      <div>Pagina 4 di 8</div>
+    </div>
+  </div>
+
+  <!-- PAGE 5: IL METODO ZERO-RISK COMMISSIONING -->
+  <div class="page">
+    <div class="page-header">
+      <img src="logo.png" alt="Open Byte Engineering" class="brand-logo-img">
+      <div class="header-tag">Metodologia Operativa</div>
+    </div>
+    <div class="page-body">
+      <h2>Il Metodo "Zero-Risk Commissioning"</h2>
+      <p class="lead">Capovolgiamo il modello tradizionale: la logica di processo e gli imprevisti si collaudano al 100% in-house tramite simulazione preventiva prima del montaggio meccanico.</p>
+
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="step-num">FASE 01</div>
+          <h4>Audit & Architettura</h4>
+          <p>Analisi delle specifiche, definizione degli standard (IEC 61131-3/PackML) e requisiti di sicurezza.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">FASE 02</div>
+          <h4>Sviluppo Modulare</h4>
+          <p>Scrittura del codice con tracciamento Git e architettura basata su librerie riutilizzabili.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">FASE 03</div>
+          <h4>Simulazione 100% In-House</h4>
+          <p>Collaudo virtuale di tutta la logica e gestione anomalie su modelli di test prima della spedizione.</p>
+        </div>
+        <div class="process-step" style="border-top-color: #00D2FF; background: #F0F9FF;">
+          <div class="step-num" style="color: #0088CC;">FASE 04</div>
+          <h4>Commissioning Rapido</h4>
+          <p><strong>-70% Tempi On-Site.</strong> In cantiere si verificano solo gli I/O. Azzeramento dei blocchi macchina.</p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top: 25px;">
+        <div class="card card-accent">
+          <h4>Vantaggi Operativi Misurabili</h4>
+          <ul class="tech-list">
+            <li><strong>Riduzione Trasferte:</strong> Taglio drastico dei costi e dei tempi di permanenza sul campo.</li>
+            <li><strong>Integrità Meccanica:</strong> Azzeramento del rischio di collisioni dovute a bug del software.</li>
+          </ul>
+        </div>
+        <div class="card card-accent">
+          <h4>Tracciabilità & Manutenibilità</h4>
+          <ul class="tech-list">
+            <li><strong>Versionamento Git:</strong> Ogni modifica è tracciata, revocabile e documentata.</li>
+            <li><strong>Codice Pulito:</strong> Interfacce chiare per facilitare la ricerca guasti ai manutentori.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <div>Open Byte Engineering - Company Profile</div>
+      <div>Pagina 5 di 8</div>
+    </div>
+  </div>
+
+  <!-- PAGE 6: I FONDATORI & ECOSISTEMA SIEMENS -->
+  <div class="page">
+    <div class="page-header">
+      <img src="logo.png" alt="Open Byte Engineering" class="brand-logo-img">
+      <div class="header-tag">Team & Partnership</div>
+    </div>
+    <div class="page-body">
+      <h2>I Fondatori & L'Ecosistema Siemens</h2>
+      
+      <div class="grid-3" style="margin-bottom: 20px;">
+        <div class="card">
+          <h4>Giovan Battista Surdi</h4>
+          <div class="badge" style="margin-bottom: 8px;">Automation Manager & Partner</div>
+          <p style="font-size: 11px;">Oltre 15 anni di esperienza nell'architettura di sistemi di controllo complessi maturati tra Siemens e primari OEM. Specialista TIA Portal, Motion Control e convergenza IT/OT (C#, Docker, Cloud).</p>
+        </div>
+
+        <div class="card">
+          <h4>Lucio Lattanzio</h4>
+          <div class="badge" style="margin-bottom: 8px;">Sr R&D Automation Engineer & Partner</div>
+          <p style="font-size: 11px;">Ingegnere Elettrico (110/110 Lode) con Master in Meccatronica. Specialista in OT Cybersecurity (CRA, IEC 62443), Safety, progettazione elettrica e librerie modulari (VS Code, Git).</p>
+        </div>
+
+        <div class="card">
+          <h4>Moussa Hanif</h4>
+          <div class="badge" style="margin-bottom: 8px;">Automation Software Developer & Partner</div>
+          <p style="font-size: 11px;">Esperto operativo sul campo e in impianti intralogistici internazionali. Specialista in sviluppo TIA Portal, diagnostica di rete e documentazione avanzata per la ricerca guasti.</p>
+        </div>
+      </div>
+
+      <div class="card" style="background: linear-gradient(135deg, #0B0F19 0%, #004080 100%); color: white;">
+        <h4 style="color: var(--accent);">🤝 Il Nostro DNA Tecnologico: Ecosistema Siemens</h4>
+        <p style="color: #E2E8F0; font-size: 12px; margin-bottom: 0;">
+          Siamo nati e cresciuti professionalmente all'interno dell'ecosistema Siemens Italia. Manteniamo un programma di aggiornamento costante sulle architetture TIA Portal (V18/V19/V20+), SIMATIC AX, Industrial Edge, WinCC Unified, Safety e Motion Control. Questa padronanza nativa costituisce la base del percorso già avviato per il conseguimento della qualifica ufficiale come <strong>Siemens Certified Programmer</strong>.
+        </p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <div>Open Byte Engineering - Company Profile</div>
+      <div>Pagina 6 di 8</div>
+    </div>
+  </div>
+
+  <!-- PAGE 7: CORE MESSAGING MATRIX -->
+  <div class="page">
+    <div class="page-header">
+      <img src="logo.png" alt="Open Byte Engineering" class="brand-logo-img">
+      <div class="header-tag">Scheda Riassuntiva</div>
+    </div>
+    <div class="page-body">
+      <h2>Perché le Aziende Scelgono Open Byte Engineering</h2>
+      
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Sfida dell'OEM / Integratore</th>
+            <th>La Risposta Open Byte Engineering</th>
+            <th>Impatto Tecnico ed Economico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Collaudi lunghi e imprevisti in cantiere</strong></td>
+            <td>Simulazione preventiva in-house della logica al 100% prima del montaggio.</td>
+            <td><strong style="color: var(--primary);">-70% Tempi On-Site.</strong> Consegne puntuali e zero danni meccanici.</td>
+          </tr>
+          <tr>
+            <td><strong>Sviluppatori sovraccarichi e codice disorganizzato</strong></td>
+            <td>Standardizzazione librerie (PackML), versionamento (GitLab) e mentoring.</td>
+            <td><strong>Ufficio Tecnico Sereno.</strong> Risoluzione burnout e zero dipendenza da singoli.</td>
+          </tr>
+          <tr>
+            <td><strong>Ansia da recepimento Cyber Resilience Act (CRA)</strong></td>
+            <td>Audit e sviluppo Security by Design secondo la norma IEC 62443.</td>
+            <td><strong>Conformità Garantita.</strong> Macchine pronte per i requisiti europei 2026-2027.</td>
+          </tr>
+          <tr>
+            <td><strong>Complessità nell'integrare tecnologie IT/OT</strong></td>
+            <td>Sviluppo chiavi in mano su Docker, Python, C#, Web HMI e OPC-UA.</td>
+            <td><strong>Innovazione a Rischio Zero.</strong> Nuove funzioni senza fermare la produzione.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="page-footer">
+      <div>Open Byte Engineering - Company Profile</div>
+      <div>Pagina 7 di 8</div>
+    </div>
+  </div>
+
+  <!-- PAGE 8: CONTATTI & CALL TO ACTION -->
+  <div class="page" style="background: var(--bg-dark); color: white;">
+    <div class="page-header" style="border-bottom-color: rgba(255,255,255,0.15);">
+      <img src="logo.png" alt="Open Byte Engineering" class="brand-logo-img-white">
+      <div class="header-tag" style="background: rgba(0,210,255,0.15); color: var(--accent);">Contatti</div>
+    </div>
+    <div class="page-body" style="justify-content: center; align-items: center; text-align: center;">
+      <h2 style="color: white; font-size: 32px; margin-bottom: 15px;">Pronti a Trasformare la Tua Ingegneria Software?</h2>
+      <p style="color: #9CA3AF; max-width: 600px; font-size: 15px; margin-bottom: 30px;">
+        Elimina i blocchi di cantiere, standardizza il codice del tuo ufficio tecnico e adegua i tuoi impianti alle direttive europee sulla Cybersecurity.
+      </p>
+
+      <div class="grid-3" style="width: 100%; max-width: 800px; text-align: left;">
+        <div class="card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: white;">
+          <h4 style="color: var(--accent);">🌐 Web & Media</h4>
+          <p style="color: #D1D5DB; font-size: 12px; margin-bottom: 0;">
+            www.open-byte.it<br>
+            LinkedIn: Open Byte Engineering
+          </p>
+        </div>
+
+        <div class="card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: white;">
+          <h4 style="color: var(--accent);">✉️ Contatti Diretti</h4>
+          <p style="color: #D1D5DB; font-size: 12px; margin-bottom: 0;">
+            info@open-byte.it<br>
+            Richiedi un Audit Gratuito
+          </p>
+        </div>
+
+        <div class="card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: white;">
+          <h4 style="color: var(--accent);">🛡️ Specializzazione</h4>
+          <p style="color: #D1D5DB; font-size: 12px; margin-bottom: 0;">
+            Ecosistema Siemens<br>
+            Percorso Siemens Certified Programmer
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer" style="border-top-color: rgba(255,255,255,0.15); color: #6B7280;">
+      <div>Open Byte Engineering - All Rights Reserved</div>
+      <div>Pagina 8 di 8</div>
+    </div>
+  </div>
+
+</body>
+</html>
