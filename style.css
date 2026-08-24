@@ -96,19 +96,6 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
-.brand-logo {
-  height: 32px;
-  width: auto;
-  display: block;
-}
-
-.brand-logo-white {
-  height: 32px;
-  width: auto;
-  display: block;
-  filter: brightness(0) invert(1); /* rende il logo bianco per header/footer scuri */
-}
-
 .nav-links {
   display: flex;
   gap: 4px;
@@ -489,8 +476,7 @@ table.matrix-table td strong { color: var(--bg-dark); }
 .cta-band .hero-actions { justify-content: center; margin-bottom: 0; }
 
 /* ---------- Contact page ---------- */
-.contact-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
-@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-grid { display: grid; grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; gap: 40px; align-items: start; }
 
 .contact-card {
   background: var(--card-bg);
