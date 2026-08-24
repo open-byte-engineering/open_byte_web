@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Open Byte Engineering</title>
+<meta name="description" content="Track record progetti Open Byte Engineering: converting, lavorazione pietra naturale, progettazione elettrica, intralogistica.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Vai al contenuto</a>
+
+<header class="site-header">
+  <nav class="nav wrap">
+    <a href="index.html" class="brand"><img src="logo.png" alt="Open Byte Engineering" class="brand-logo-white">Open Byte Engineering</a>    <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="chi-siamo.html">Chi Siamo</a>
+      <a href="servizi.html">Servizi</a>
+      <a href="tech-stack.html">Tech Stack</a>
+      <a href="metodologia.html">Metodologia</a>
+      <a href="perche-noi.html">Perché Noi</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="contatti.html" class="nav-cta">Contatti</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Track record progetti</span>
+      <h1>Esperienza sul campo, progetto per progetto</h1>
+      <p>Know-how nei settori dell'automazione industriale, converting, pietra naturale e intralogistica.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <input type="text" id="searchInput" class="search-box" placeholder="Cerca progetto, dettagli o paese..." onkeyup="filterProjects()">
+
+      <div class="controls">
+        <button class="filter-btn active" onclick="filterCategory('all', this)">Tutti</button>
+        <button class="filter-btn" onclick="filterCategory('Converting', this)">Converting</button>
+        <button class="filter-btn" onclick="filterCategory('Lavorazione pietra naturale', this)">Pietra Naturale</button>
+        <button class="filter-btn" onclick="filterCategory('Progettazione elettrica', this)">Progettazione Elettrica</button>
+        <button class="filter-btn" onclick="filterCategory('Intralogistica - magazzini automatici', this)">Intralogistica</button>
+      </div>
+
+      <div class="portfolio-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Hai un progetto simile in mente?</h2>
+      <p>Raccontaci la tua sfida: valutiamo insieme il livello di ingaggio più adatto.</p>
+      <div class="hero-actions">
+        <a href="contatti.html" class="btn btn-primary">Parliamone</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><span class="brand-mark">OB</span>Open Byte Engineering</div>
+        <p>Ingegneria del software industriale per costruttori di macchine e system integrator: PLC, Motion Control, IT/OT, cybersecurity.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Sito</h5>
+        <ul>
+          <li><a href="chi-siamo.html">Chi Siamo</a></li>
+          <li><a href="servizi.html">Servizi</a></li>
+          <li><a href="tech-stack.html">Tech Stack</a></li>
+          <li><a href="metodologia.html">Metodologia</a></li>
+          <li><a href="perche-noi.html">Perché Noi</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contatti</h5>
+        <ul>
+          <li>www.open-byte.it</li>
+          <li>info@open-byte.it</li>
+          <li>LinkedIn: Open Byte Engineering</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Open Byte Engineering — All Rights Reserved</span>
+      <span>Specializzazione Ecosistema Siemens</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
