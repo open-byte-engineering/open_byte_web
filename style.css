@@ -608,6 +608,7 @@ table.matrix-table td strong { color: var(--bg-dark); }
   font-family: var(--mono);
 }
 .tag-converting { background: #EFF6FF; color: #1D4ED8; }
+.tag-siemens { background: #E0F2FE; color: #0369A1; }
 .tag-stone { background: #FEF3C7; color: #D97706; }
 .tag-elec { background: #ECFDF5; color: #059669; }
 .tag-intra { background: #F3E8FF; color: #7C3AED; }
