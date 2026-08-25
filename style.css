@@ -114,6 +114,19 @@ ul { list-style: none; }
   filter: brightness(0) invert(1);
 }
 
+.hero-logo {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.hero-logo-img {
+  height: 80px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  filter: brightness(0) invert(1); /* logo bianco su sfondo scuro dell'hero */
+}
+
 .nav-links {
   display: flex;
   gap: 4px;
