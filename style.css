@@ -121,7 +121,7 @@ ul { list-style: none; }
 .hero-logo-img {
   display: block;
   margin: 0 auto;
-  height: 110px;
+  height: 150px;
   width: auto;
   max-width: 100%;
   filter: brightness(0) invert(1);
