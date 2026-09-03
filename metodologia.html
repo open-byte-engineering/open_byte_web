@@ -4,29 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Metodologia | Open Byte Engineering</title>
-<meta name="description" content="Il metodo Zero-Risk Commissioning di Open Byte Engineering: simulazione preventiva in-house per ridurre del 70% i tempi di collaudo on-site.">
+<meta name="description" content="Il metodo Zero-Risk Commissioning di Open Byte Engineering a confronto con il processo tradizionale: simulazione preventiva in-house per ridurre del 70% i tempi di collaudo on-site.">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 <a href="#main" class="skip-link">Vai al contenuto</a>
 
 <header class="site-header">
   <nav class="nav wrap">
-    <a href="index.html" class="brand">Open Byte Engineering</a>
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Open Byte Engineering" class="brand-logo-white">
+    </a>
     <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false">☰</button>
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="chi-siamo.html">Chi Siamo</a>
-      <a href="servizi.html">Servizi</a>
+      <a href="servizi.html">Servizi & Livelli</a>
       <a href="tech-stack.html">Tech Stack</a>
-      <a href="metodologia.html">Metodologia</a>
-      <a href="perche-noi.html">Perché Noi</a>
+      <a href="metodologia.html" class="active">Metodologia</a>
       <a href="portfolio.html">Progetti</a>
-      <a href="contatti.html" class="nav-cta">Contatti</a>
+      <a href="chi-siamo.html">Azienda</a>
+      <a href="contatti.html" class="nav-cta">Richiedi Audit</a>
     </div>
-    <img src="logo.png" alt="Open Byte Engineering" class="brand-logo-white">
   </nav>
 </header>
+
 <main id="main">
   <div class="page-hero">
     <div class="wrap">
@@ -38,26 +42,72 @@
 
   <section>
     <div class="wrap">
-      <div class="process-flow">
-        <div class="process-step">
-          <div class="step-num">Fase 01</div>
-          <h4>Analisi e specifiche</h4>
-          <p>Metodologia collaudata di analisi e documentazione standardizzata: garantiamo massima trasparenza, azzerando errori e rielaborazioni di progetto.</p>
+      <h2 class="section-title">Processo tradizionale vs. Zero-Risk Commissioning</h2>
+      <p class="section-lead">Stessa consegna, percorso radicalmente diverso: nel metodo tradizionale gli imprevisti si scoprono in cantiere; nel nostro, si risolvono prima, in simulazione.</p>
+
+      <div class="timeline-compare">
+        <div class="timeline-col traditional">
+          <h4>Processo tradizionale</h4>
+          <div class="timeline-step">
+            <div class="timeline-dot">1</div>
+            <div class="timeline-step-body">
+              <h5>Sviluppo in ufficio</h5>
+              <p>Codice scritto senza validazione preventiva del comportamento reale della macchina.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-step-body">
+              <h5>Trasferta in cantiere</h5>
+              <p>Prima verifica reale della logica direttamente sulla macchina fisica.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot">3</div>
+            <div class="timeline-step-body">
+              <h5>Debug on-site sotto pressione</h5>
+              <p>Errori e imprevisti gestiti in tempo reale, con rischio di fermi e danni meccanici.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot">4</div>
+            <div class="timeline-step-body">
+              <h5>Commissioning prolungato</h5>
+              <p>Tempi lunghi e imprevedibili, costi di trasferta elevati.</p>
+            </div>
+          </div>
         </div>
-        <div class="process-step">
-          <div class="step-num">Fase 02</div>
-          <h4>Sviluppo modulare</h4>
-          <p>Scrittura del codice con tracciamento Git e architettura basata su librerie riutilizzabili.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">Fase 03</div>
-          <h4>Simulazione 100% in-house</h4>
-          <p>Collaudo virtuale di tutta la logica e gestione anomalie su modelli di test, prima della spedizione.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">Fase 04</div>
-          <h4>Commissioning rapido</h4>
-          <p><strong>-70% tempi on-site.</strong> In cantiere si verificano solo gli I/O. Azzeramento dei blocchi macchina.</p>
+
+        <div class="timeline-col zerorisk">
+          <h4>Zero-Risk Commissioning</h4>
+          <div class="timeline-step">
+            <div class="timeline-dot">1</div>
+            <div class="timeline-step-body">
+              <h5>Audit & Architettura</h5>
+              <p>Analisi delle specifiche, definizione degli standard (IEC 61131-3/PackML) e requisiti di sicurezza.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-step-body">
+              <h5>Sviluppo Modulare</h5>
+              <p>Scrittura del codice con tracciamento Git e architettura basata su librerie riutilizzabili.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot">3</div>
+            <div class="timeline-step-body">
+              <h5>Simulazione 100% in-house</h5>
+              <p>Collaudo virtuale di tutta la logica e gestione anomalie su modelli di test, prima della spedizione.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot">4</div>
+            <div class="timeline-step-body">
+              <h5>Commissioning rapido</h5>
+              <p><strong>-70% tempi on-site.</strong> In cantiere si verificano solo gli I/O.</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -66,7 +116,7 @@
           <h3>Vantaggi operativi misurabili</h3>
           <ul class="tech-list">
             <li><strong>Riduzione trasferte:</strong> taglio drastico dei costi e dei tempi di permanenza sul campo.</li>
-            <li><strong>Tempi e costi sotto controllo:</strong> Pianificazione rigida delle logiche prima del campo: tempi di avviamento azzerati e rispetto garantito della data di consegna.</li>
+            <li><strong>Integrità meccanica:</strong> azzeramento del rischio di collisioni dovute a bug del software.</li>
           </ul>
         </div>
         <div class="card card-accent">
@@ -85,7 +135,7 @@
       <h2>Vuoi vedere il metodo applicato ai nostri progetti?</h2>
       <p>Sfoglia il track record completo: taglierine, macchine per pietra naturale, progettazione elettrica e intralogistica.</p>
       <div class="hero-actions">
-        <a href="portfolio.html" class="btn btn-primary">Vai al portfolio</a>
+        <a href="portfolio.html" class="btn btn-primary">Vai ai progetti</a>
       </div>
     </div>
   </section>
@@ -101,12 +151,11 @@
       <div class="footer-col">
         <h5>Sito</h5>
         <ul>
-          <li><a href="chi-siamo.html">Chi Siamo</a></li>
-          <li><a href="servizi.html">Servizi</a></li>
+          <li><a href="servizi.html">Servizi & Livelli</a></li>
           <li><a href="tech-stack.html">Tech Stack</a></li>
           <li><a href="metodologia.html">Metodologia</a></li>
-          <li><a href="perche-noi.html">Perché Noi</a></li>
           <li><a href="portfolio.html">Progetti</a></li>
+          <li><a href="chi-siamo.html">Azienda</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -120,7 +169,6 @@
     </div>
     <div class="footer-bottom">
       <span>© Open Byte Engineering — All Rights Reserved</span>
-      <span>Specializzazione Ecosistema Siemens</span>
       <span><a href="privacy.html" style="color:#6B7280;">Privacy Policy</a></span>
     </div>
   </div>
