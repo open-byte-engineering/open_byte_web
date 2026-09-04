@@ -21,11 +21,11 @@
     </a>
     <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false">☰</button>
     <div class="nav-links">
+      <a href="chi-siamo.html">Chi Siamo</a>
       <a href="servizi.html">Servizi & Livelli</a>
       <a href="tech-stack.html" class="active">Tech Stack</a>
       <a href="metodologia.html">Metodologia</a>
       <a href="portfolio.html">Progetti</a>
-      <a href="chi-siamo.html">Azienda</a>
       <a href="contatti.html" class="nav-cta">Richiedi Audit</a>
     </div>
   </nav>
@@ -42,89 +42,80 @@
 
   <section>
     <div class="wrap">
-      <div class="stack-tabs">
-        <button class="stack-tab-btn active" onclick="showStackTab('tab-campo', this)">⚙️ Campo / PLC</button>
-        <button class="stack-tab-btn" onclick="showStackTab('tab-edge', this)">🌐 Edge / IT</button>
-        <button class="stack-tab-btn" onclick="showStackTab('tab-cloud', this)">🛡️ Cloud / Cybersecurity</button>
-        <button class="stack-tab-btn" onclick="showStackTab('tab-cad', this)">📐 CAD / Tools</button>
-      </div>
 
-      <div id="tab-campo" class="stack-panel active">
-        <div class="grid-2">
-          <div class="card">
-            <h4>Siemens Ecosystem</h4>
-            <ul class="tech-list">
-              <li>S7-1500/1200 (TIA Portal V18-V20+), STEP 7, Safety Integrated.</li>
-              <li>SCADA/HMI: WinCC Unified, WinCC Prof, SIMATIC AX.</li>
-              <li>Motion: Sinamics S120/G120, Simotion, S7-1500T (assi interpolati, camme).</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>Multi-Vendor & Bus di Campo</h4>
-            <ul class="tech-list">
-              <li>CODESYS, Beckhoff TwinCAT, Gefran.</li>
-              <li>Profinet (Engineer certificato), Profibus, EtherNet/IP, IO-Link.</li>
-              <li>Standard IEC 61131-3, ISA-88, OMAC/PackML.</li>
-            </ul>
-          </div>
+      <span class="badge">⚙️ Campo / PLC</span>
+      <div class="grid-2" style="margin-bottom: 40px;">
+        <div class="card">
+          <h4>Siemens Ecosystem</h4>
+          <ul class="tech-list">
+            <li>S7-1500/1200 (TIA Portal V18-V20+), STEP 7, Safety Integrated.</li>
+            <li>SCADA/HMI: WinCC Unified, WinCC Prof, SIMATIC AX.</li>
+            <li>Motion: Sinamics S120/G120, Simotion, S7-1500T (assi interpolati, camme).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Multi-Vendor & Bus di Campo</h4>
+          <ul class="tech-list">
+            <li>CODESYS, Beckhoff TwinCAT, Gefran.</li>
+            <li>Profinet (Engineer certificato), Profibus, EtherNet/IP, IO-Link.</li>
+            <li>Standard IEC 61131-3, ISA-88, OMAC/PackML.</li>
+          </ul>
         </div>
       </div>
 
-      <div id="tab-edge" class="stack-panel">
-        <div class="grid-2">
-          <div class="card">
-            <h4>Convergenza IT/OT</h4>
-            <ul class="tech-list">
-              <li>Linguaggi: C#, Python, TypeScript, JavaScript, HTML5, SQL, C++.</li>
-              <li>Edge & container: Docker, Linux OS a bordo macchina, microservizi Edge AI.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>IIoT & Web HMI</h4>
-            <ul class="tech-list">
-              <li>OPC-UA (Native & Secure), Modbus TCP, REST API.</li>
-              <li>Interfacce operatore di nuova generazione in React / Node.js.</li>
-            </ul>
-          </div>
+      <span class="badge">🌐 Edge / IT</span>
+      <div class="grid-2" style="margin-bottom: 40px;">
+        <div class="card">
+          <h4>Convergenza IT/OT</h4>
+          <ul class="tech-list">
+            <li>Linguaggi: C#, Python, TypeScript, JavaScript, HTML5, SQL, C++.</li>
+            <li>Edge & container: Docker, Linux OS a bordo macchina, microservizi Edge AI.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>IIoT & Web HMI</h4>
+          <ul class="tech-list">
+            <li>OPC-UA (Native & Secure), Modbus TCP, REST API.</li>
+            <li>Interfacce operatore di nuova generazione in React / Node.js.</li>
+          </ul>
         </div>
       </div>
 
-      <div id="tab-cloud" class="stack-panel">
-        <div class="grid-2">
-          <div class="card">
-            <h4>Normative & Standard</h4>
-            <ul class="tech-list">
-              <li>Cyber Resilience Act (CRA), Regolamento Macchine 2023/1230.</li>
-              <li>ISA-88, OMAC / PackML, IEC 61131-3.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>Security OT</h4>
-            <ul class="tech-list">
-              <li>IEC 62443 (Security by Design), hardening di rete.</li>
-              <li>Segmentazione reti OT/IT, gestione accessi.</li>
-            </ul>
-          </div>
+      <span class="badge">🛡️ Cloud / Cybersecurity</span>
+      <div class="grid-2" style="margin-bottom: 40px;">
+        <div class="card">
+          <h4>Normative & Standard</h4>
+          <ul class="tech-list">
+            <li>Cyber Resilience Act (CRA), Regolamento Macchine 2023/1230.</li>
+            <li>ISA-88, OMAC / PackML, IEC 61131-3.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Security OT</h4>
+          <ul class="tech-list">
+            <li>IEC 62443 (Security by Design), hardening di rete.</li>
+            <li>Segmentazione reti OT/IT, gestione accessi.</li>
+          </ul>
         </div>
       </div>
 
-      <div id="tab-cad" class="stack-panel">
-        <div class="grid-2">
-          <div class="card">
-            <h4>CAD Elettrico</h4>
-            <ul class="tech-list">
-              <li>EPLAN Electric P8, SPAC, AutoCAD 2D/3D, EXEL Integra.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>DevOps & Virtual Testing</h4>
-            <ul class="tech-list">
-              <li>Git / GitLab, VS Code per automazione.</li>
-              <li>Simulazione preventiva della logica prima del cantiere.</li>
-            </ul>
-          </div>
+      <span class="badge">📐 CAD / Tools</span>
+      <div class="grid-2">
+        <div class="card">
+          <h4>CAD Elettrico</h4>
+          <ul class="tech-list">
+            <li>EPLAN Electric P8, SPAC, AutoCAD 2D/3D, EXEL Integra.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>DevOps & Virtual Testing</h4>
+          <ul class="tech-list">
+            <li>Git / GitLab, VS Code per automazione.</li>
+            <li>Simulazione preventiva della logica prima del cantiere.</li>
+          </ul>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -152,7 +143,7 @@
           <li><a href="tech-stack.html">Tech Stack</a></li>
           <li><a href="metodologia.html">Metodologia</a></li>
           <li><a href="portfolio.html">Progetti</a></li>
-          <li><a href="chi-siamo.html">Azienda</a></li>
+          <li><a href="chi-siamo.html">Chi Siamo</a></li>
         </ul>
       </div>
       <div class="footer-col">
